@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+
+        table {
+            border: 2px solid black;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <center>
+
+        <h1>HTML Tables</h1>
+
+        <table>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+            </tr>
+            <tr>
+                <td id="1">Cell</td>
+                <td id="2">Cell</td>
+                <td id="3">Cell</td>
+            </tr>
+            <tr>
+                <td id="4">Cell</td>
+                <td id="5">Cell</td>
+                <td id="6">Cell</td>
+            </tr>
+            <tr>
+                <td id="7">Cell</td>
+                <td id="8">Cell</td>
+                <td id="9">Cell</td>
+            </tr>
+        </table>
+        
+        <br>
+
+        <label>User Input:</label>
+        <input type="number" id="userInput" min="1" max="10">
+        <button onClick="clicked()">Calculate</button>
+
+    </center>
+
+    <script>
+
+        function updateGrid( input ) {
+
+            for ( var i = 1; i < 10 ; i++ ) {
+                var output = input + i 
+                document.getElementById(i).innerHTML = output
+            }
+
+        }
+
+        function clicked() {
+
+            var input = parseInt(document.getElementById("userInput").value)
+
+            if ( Number.isInteger(input) )
+            {
+                alert( "User Input is an Integer!")
+            } else {
+                alert(" Not an integer")
+            }
+
+            var modifier = 0
+            
+            updateGrid( input )
+
+        }
+
+    </script>
+    
+    
+</body>
+</html>
